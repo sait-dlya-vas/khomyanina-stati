@@ -194,39 +194,12 @@
 </style>
 <style>
 html { scroll-behavior: smooth; } body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; } img { max-width: 100%; height: auto; }
-
-.kh-bar { position: absolute; z-index: 50; top: 20px; left: 40px; right: 40px; min-height: 40px; display: flex; align-items: center; justify-content: space-between;
-  padding: 0 20px; background: #3f84ff; border-radius: 0 0 20px 20px; font-family: 'Manrope', sans-serif; box-sizing: border-box; }
-.kh-bar__phone { color: #fff; font-weight: 700; font-size: 16px; text-decoration: none; }
-.kh-bar__burger { width: 40px; height: 40px; border: 0; background: none; cursor: pointer; display: grid; place-content: center; gap: 4px; padding: 0; }
-.kh-bar__burger span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 1px; }
-.kh-menu__overlay { position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,.6); }
-.kh-menu { position: fixed; z-index: 100; top: 0; right: 0; bottom: 0; width: min(320px, 86vw); background: #3f84ff; padding: 80px 32px 32px; box-sizing: border-box; font-family: 'Manrope', sans-serif; }
-.kh-menu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
-.kh-menu a { color: #fff; font-size: 16px; font-weight: 600; text-decoration: none; }
-.kh-menu a:hover { opacity: .8; }
-.kh-menu__close { position: absolute; top: 18px; right: 18px; width: 36px; height: 36px; border: 0; background: none; cursor: pointer; }
-.kh-menu__close span { position: absolute; left: 7px; top: 17px; width: 22px; height: 2px; background: #fff; border-radius: 1px; }
-.kh-menu__close span:first-child { transform: rotate(45deg); }
-.kh-menu__close span:last-child { transform: rotate(-45deg); }
-.kh-menu[hidden], .kh-menu__overlay[hidden] { display: none; }
-@media (max-width: 960px) { .kh-bar { top: 5px; left: 5px; right: 5px; } }
 .ar, .ar * { box-sizing: border-box; }
 .ar { --pv-head: 'Comfortaa', system-ui, sans-serif; --pv-text: 'Manrope', system-ui, sans-serif; --pv-ink: #0f1b33; --pv-body: #484848;
   --pv-muted: #5a6781; --pv-accent: #2563eb; --pv-accent-deep: #1d4ed8; --pv-accent-soft: #e8f0fe; --pv-line: #e8ecf3;
   font-family: var(--pv-text); color: var(--pv-body); }
-.ar-head { max-width: 860px; margin: 0 auto; padding: 120px 20px 28px; text-align: center; }
-.ar-crumbs { font-size: 14px; color: var(--pv-muted); margin: 0 0 22px; }
-.ar-crumbs a { color: var(--pv-accent-deep); text-decoration: none; }
-.ar-crumbs a:hover { text-decoration: underline; }
-.ar-head h1 { font-family: var(--pv-head); font-weight: 600; font-size: clamp(28px, 4.2vw, 46px); line-height: 1.16; color: var(--pv-ink); margin: 0 0 18px; text-wrap: balance; }
-.ar-meta { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 18px; margin: 0; font-size: 15px; color: var(--pv-muted); }
-.ar-meta__rub { color: var(--pv-accent-deep); font-weight: 600; }
-.ar-cover { max-width: 1040px; margin: 8px auto 0; padding: 0 20px; }
-.ar-cover img { display: block; width: 100%; aspect-ratio: 1200 / 630; object-fit: cover; border-radius: 24px; background: #f1f4f9; }
-.ar-lead { max-width: 760px; margin: 40px auto 0; padding: 0 20px; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; color: #2a3654; }
-.ar-lead p { margin: 0 0 14px; }
-.ar .pv-quote { margin-top: 40px; }
+.ar .pv-hero__meta time, .ar .pv-hero__meta span:last-child { white-space: nowrap; }
+.ar .pv-hero__copy > .pv-hero__lead + .pv-hero__lead { margin-top: -8px; }
 .ar-toc { max-width: 760px; margin: 40px auto 0; padding: 0 20px; }
 .ar-toc__box { background: #f7f9fd; border: 1px solid var(--pv-line); border-radius: 20px; padding: 24px 28px; }
 .ar-toc__title { font-family: var(--pv-head); font-weight: 600; font-size: 19px; color: var(--pv-ink); margin: 0 0 12px; }
@@ -245,6 +218,8 @@ html { scroll-behavior: smooth; } body { margin: 0; background: #fff; -webkit-fo
 .ar .pv-faq h2 { scroll-margin-top: 24px; }
 .ar-author { max-width: 760px; margin: 8px auto 0; padding: 24px 20px 0; border-top: 1px solid var(--pv-line); font-size: 16px; color: var(--pv-muted); text-align: center; }
 .ar-author b { color: var(--pv-ink); font-weight: 600; }
+.ar-author__note { max-width: 760px; margin: 8px auto 0; padding: 24px 20px 0; border-top: 1px solid var(--pv-line); text-align: center; font-family: var(--pv-head); font-size: clamp(18px, 2vw, 22px); color: var(--pv-accent); }
+.ar-author__note + .ar-author { margin-top: 0; padding-top: 12px; border-top: 0; }
 .ar-author a { color: var(--pv-accent-deep); text-decoration: none; border-bottom: 1px solid currentColor; }
 .ar .pv-more { padding-bottom: 56px; }
 /* фото в карточках вертикальные: карточка выше, кадр прижат к верху – чтобы не резать лицо */
@@ -258,38 +233,21 @@ html { scroll-behavior: smooth; } body { margin: 0; background: #fff; -webkit-fo
 .ar-foot a:hover { text-decoration: underline; }
 .ar-foot__links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
 a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #93b4ff; outline-offset: 3px; border-radius: 6px; }
-@media (max-width: 960px) { .ar-head { padding-top: 84px; } }
-@media (max-width: 640px) { .ar-cover img { border-radius: 16px; } .ar-toc__box { padding: 20px; } .ar-cta { padding: 20px; } }
+@media (max-width: 640px) { .ar-toc__box { padding: 20px; } .ar-cta { padding: 20px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
-
-<header class="kh-bar">
-  <a class="kh-bar__phone" href="tel:+79032780210">+7 903 278 0210</a>
-  <button class="kh-bar__burger" type="button" aria-expanded="false" aria-controls="kh-menu" aria-label="Меню"><span></span><span></span><span></span></button>
-</header>
-<div class="kh-menu__overlay" hidden></div>
-<nav class="kh-menu" id="kh-menu" aria-label="Навигационное меню" hidden>
-  <button class="kh-menu__close" type="button" aria-label="Закрыть меню"><span></span><span></span></button>
-  <ul>
-    <li><a href="/khomyanina-stati/">Главная</a></li>
-    <li><a href="/khomyanina-stati/#rec4125604701">Для кого</a></li>
-    <li><a href="/khomyanina-stati/#rec4126838701">Формат работы</a></li>
-    <li><a href="/khomyanina-stati/#rec4122606101">Начать сотрудничество</a></li>
-    <li><a href="/khomyanina-stati/stati">Статьи</a></li>
-  </ul>
-</nav>
 <main class="ar">
-<header class="ar-head">
-  <p class="ar-crumbs"><a href="/khomyanina-stati/">Главная</a> / <a href="/khomyanina-stati/stati">Статьи</a></p>
-  <h1>Успех без радости: почему достижения не приносят удовлетворения</h1>
-  <p class="ar-meta"><span class="ar-meta__rub">Психология карьеры</span><time datetime="2026-10-12">12 октября 2026</time><span>8 минут чтения</span></p>
-</header>
-<figure class="ar-cover"><img src="/khomyanina-stati/img/uspekh-bez-radosti-oblozhka.jpg" alt="Надежда Хомянина, психолог, статья об успехе без радости" width="1200" height="630" fetchpriority="high"></figure>
-<div class="ar-lead">
-  <p>Вы достигли цели, о которой мечтали, но вместо радости чувствуете пустоту и усталость? В этой статье мы разберем, почему так происходит с точки зрения нейрофизиологии и психологии, и что сделать, чтобы вернуть вкус к жизни и работе.</p>
-</div>
+<!-- Верх статьи – как на старых статьях сайта (просьба Александры 20.10): текст слева, вертикальное фото справа целиком.
+     Из ТЗ: под H1 мета-строка (рубрика, дата, время чтения), без плашек «Статья N». Широкая обложка 1200×630 – только для поисковиков и соцсетей. -->
+<section class="pv-hero" aria-labelledby="pv-hero-title"><div class="pv-hero__inner"> <div class="pv-hero__copy">
+  <h1 class="pv-hero__title" id="pv-hero-title">Успех без радости: <em>почему достижения</em> не приносят удовлетворения</h1>
+  <div class="pv-hero__meta ar-meta"><span class="pv-hero__tag">Психология карьеры</span><time datetime="2026-10-12">12 октября 2026</time><span>8 минут чтения</span></div>
+  <p class="pv-hero__lead">Вы достигли цели, о которой мечтали, но вместо радости чувствуете пустоту и усталость? В этой статье мы разберем, почему так происходит с точки зрения нейрофизиологии и психологии, и что сделать, чтобы вернуть вкус к жизни и работе.</p>
+  <div class="pv-hero__author"><div class="pv-hero__avatar" aria-hidden="true">Н</div> <div><div class="pv-hero__name">Надежда Хомянина</div><div class="pv-hero__role">Психолог в сфере профессиональной реализации</div></div></div>
+  <div class="pv-hero__cta-row"> <a class="pv-hero__cta" href="#pv-article">Читать статью <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a> </div>
+</div> <div class="pv-hero__visual"> <div class="pv-hero__frame"><img src="/khomyanina-stati/img/uspekh-bez-radosti-foto.jpg" alt="Надежда Хомянина, психолог, статья об успехе без радости" width="960" height="1200" fetchpriority="high"></div> </div> </div></section>
 <section class="pv-quote"><blockquote><p>«Я сейчас самый несчастный человек из живущих. Если бы то, что я чувствую, распределили поровну между всем человечеством, на земле не осталось бы ни одного улыбающегося лица».</p><cite>Авраам Линкольн, 1841 год</cite></blockquote></section>
 <nav class="ar-toc" aria-label="Содержание"><div class="ar-toc__box"><p class="ar-toc__title">Содержание</p><ol>
   <li><a href="#почему">Почему успех не приносит радости</a></li>
@@ -340,24 +298,15 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px soli
   <details class="pv-faq__item"><summary>Когда стоит обратиться к психологу по карьере?<span class="pv-faq__icon" aria-hidden="true"></span></summary><p>Если вы достигли целей, но чувствуете опустошение, потерю смысла или постоянную усталость. Психолог поможет разобраться в истинных ценностях и выстроить путь, который будет приносить удовлетворение.</p></details>
   <details class="pv-faq__item"><summary>Можно ли вернуть радость от достижений?<span class="pv-faq__icon" aria-hidden="true"></span></summary><p>Конечно. Это процесс не быстрый, но очень увлекательный. Пустота внутри — это не про недостаток достижений, а про потерю связи с собой. А связь с собой — это когда вы себе не чужой. Когда вы себе — лучший друг, а не строгий надзиратель. Эту связь можно и нужно восстановить.</p></details>
 </div></section>
+
 <p class="ar-author"><b>Надежда Хомянина</b>, психолог в сфере профессиональной реализации · <a href="/khomyanina-stati/#about">Обо мне</a></p>
 <section class="pv-more" aria-labelledby="pv-more-title"><h2 id="pv-more-title">Читайте также</h2> <div class="pv-more__grid">
-  <a class="pv-more__card" href="/khomyanina-stati/kto-ty-bez-raboty"><div class="pv-more__img"><img src="/khomyanina-stati/img/photo3.jpg" alt="" loading="lazy"></div> <div class="pv-more__body"><span class="pv-more__tag">Психология карьеры</span><span class="pv-more__title">Кто ты без работы: когда профессия перестаёт быть опорой</span><span class="pv-more__link">Читать статью</span></div></a>
-  <a class="pv-more__card" href="/khomyanina-stati/cennosti-kak-kompas"><div class="pv-more__img"><img src="/khomyanina-stati/img/photo5.jpg" alt="" loading="lazy"></div> <div class="pv-more__body"><span class="pv-more__tag">Психология карьеры</span><span class="pv-more__title">Ценности как компас: на что опираться, чтобы принимать верные решения</span><span class="pv-more__link">Читать статью</span></div></a>
-  <a class="pv-more__card" href="/khomyanina-stati/otkladyvanie-vazhnyh-reshenij"><div class="pv-more__img"><img src="/khomyanina-stati/img/photo4.jpg" alt="" loading="lazy" style="object-position: center 45%"></div> <div class="pv-more__body"><span class="pv-more__tag">Психология карьеры</span><span class="pv-more__title">Откладывание важных решений: почему мы не решаемся и как это преодолеть</span><span class="pv-more__link">Читать статью</span></div></a>
+  <a class="pv-more__card" href="/khomyanina-stati/kto-ty-bez-raboty"><div class="pv-more__img"><img src="/khomyanina-stati/img/kto-ty-bez-raboty-oblozhka.jpg" alt="" loading="lazy"></div> <div class="pv-more__body"><span class="pv-more__tag">Психология карьеры</span><span class="pv-more__title">Кто ты без работы: когда профессия перестаёт быть опорой</span><span class="pv-more__link">Читать статью</span></div></a>
+  <a class="pv-more__card" href="/khomyanina-stati/cennosti-kak-kompas"><div class="pv-more__img"><img src="/khomyanina-stati/img/cennosti-kak-kompas-oblozhka.jpg" alt="" loading="lazy"></div> <div class="pv-more__body"><span class="pv-more__tag">Психология карьеры</span><span class="pv-more__title">Ценности как компас: на что опираться, чтобы принимать верные решения</span><span class="pv-more__link">Читать статью</span></div></a>
+  <a class="pv-more__card" href="/khomyanina-stati/otkladyvanie-vazhnyh-reshenij"><div class="pv-more__img"><img src="/khomyanina-stati/img/otkladyvanie-vazhnyh-reshenij-oblozhka.jpg" alt="" loading="lazy"></div> <div class="pv-more__body"><span class="pv-more__tag">Психология карьеры</span><span class="pv-more__title">Откладывание важных решений: почему мы не решаемся и как это преодолеть</span><span class="pv-more__link">Читать статью</span></div></a>
 </div> <p class="pv-more__home"><a href="/khomyanina-stati/stati">Все статьи</a></p></section>
 </main>
 <footer class="ar-foot"><div class="ar-foot__in"> <div>© 2026 Хомянина Н. Н., Москва · ИНН 620601455499<br><a href="tel:+79032780210">+7 903 278-02-10</a> · <a href="mailto:sch-geisha@yandex.ru">sch-geisha@yandex.ru</a></div> <div class="ar-foot__links"><a href="/khomyanina-stati/policy">Политика обработки персональных данных</a><a href="/khomyanina-stati/personal">Согласие на обработку персональных данных</a></div></div></footer>
-<script>
-(function () {
-  var burger = document.querySelector('.kh-bar__burger'), menu = document.getElementById('kh-menu'), ov = document.querySelector('.kh-menu__overlay');
-  window.khSetMenu = function (open) { menu.hidden = !open; ov.hidden = !open; burger.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : ''; if (open) menu.querySelector('a').focus(); };
-  burger.addEventListener('click', function () { khSetMenu(true); });
-  ov.addEventListener('click', function () { khSetMenu(false); });
-  menu.querySelector('.kh-menu__close').addEventListener('click', function () { khSetMenu(false); });
-  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { khSetMenu(false); }); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') khSetMenu(false); });
-})();</script>
 <!-- Яндекс Метрика: работает только на домене khomyanina.ru -->
 <script>
 if (/(^|\.)khomyanina\.ru$/.test(location.hostname)) {
