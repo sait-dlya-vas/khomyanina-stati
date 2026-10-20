@@ -246,10 +246,17 @@ html { scroll-behavior: smooth; } body { margin: 0; background: #fff; -webkit-fo
 .ar-author { max-width: 760px; margin: 8px auto 0; padding: 24px 20px 0; border-top: 1px solid var(--pv-line); font-size: 16px; color: var(--pv-muted); text-align: center; }
 .ar-author b { color: var(--pv-ink); font-weight: 600; }
 .ar-author a { color: var(--pv-accent-deep); text-decoration: none; border-bottom: 1px solid currentColor; }
-.ar .pv-more { padding-bottom: 72px; }
+.ar .pv-more { padding-bottom: 56px; }
 /* фото в карточках вертикальные: карточка выше, кадр прижат к верху – чтобы не резать лицо */
 .ar .pv-more__img { aspect-ratio: 4 / 3; }
 .ar .pv-more__img img { object-position: center top; }
+/* подвал – те же размеры и цвета, что у подвала главной (.nk-footer) */
+.ar-foot { font-family: 'Manrope', system-ui, sans-serif; background: #fff; }
+.ar-foot__in { max-width: 1200px; margin: 0 auto; padding: 22px clamp(16px, 4vw, 48px) 40px; border-top: 1px solid #DDE4F1;
+  display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; line-height: 1.6; color: #6B7790; }
+.ar-foot a { color: #1F4FBF; text-decoration: none; }
+.ar-foot a:hover { text-decoration: underline; }
+.ar-foot__links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
 a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #93b4ff; outline-offset: 3px; border-radius: 6px; }
 @media (max-width: 960px) { .ar-head { padding-top: 84px; } }
 @media (max-width: 640px) { .ar-cover img { border-radius: 16px; } .ar-toc__box { padding: 20px; } .ar-cta { padding: 20px; } }
@@ -340,6 +347,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px soli
   <a class="pv-more__card" href="/khomyanina-stati/otkladyvanie-vazhnyh-reshenij"><div class="pv-more__img"><img src="/khomyanina-stati/img/photo4.jpg" alt="" loading="lazy" style="object-position: center 45%"></div> <div class="pv-more__body"><span class="pv-more__tag">Психология карьеры</span><span class="pv-more__title">Откладывание важных решений: почему мы не решаемся и как это преодолеть</span><span class="pv-more__link">Читать статью</span></div></a>
 </div> <p class="pv-more__home"><a href="/khomyanina-stati/stati">Все статьи</a></p></section>
 </main>
+<footer class="ar-foot"><div class="ar-foot__in"> <div>© 2026 Хомянина Н. Н., Москва · ИНН 620601455499<br><a href="tel:+79032780210">+7 903 278-02-10</a> · <a href="mailto:sch-geisha@yandex.ru">sch-geisha@yandex.ru</a></div> <div class="ar-foot__links"><a href="/khomyanina-stati/policy">Политика обработки персональных данных</a><a href="/khomyanina-stati/personal">Согласие на обработку персональных данных</a></div></div></footer>
 <script>
 (function () {
   var burger = document.querySelector('.kh-bar__burger'), menu = document.getElementById('kh-menu'), ov = document.querySelector('.kh-menu__overlay');
