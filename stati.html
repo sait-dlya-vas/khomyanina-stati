@@ -49,7 +49,10 @@ img { max-width: 100%; display: block; }
 .st-card { background: #fff; border-radius: 22px; box-shadow: 0 1px 2px rgba(21,35,59,.05), 0 14px 36px rgba(21,35,59,.07); overflow: hidden; transition: transform .2s ease-out, box-shadow .2s ease-out; }
 .st-card__link { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
 .st-card__img { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #eaf1ff; }
-.st-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease-out; }
+/* фото вертикальные, карточка горизонтальная: кадр прижат к верху, чтобы не резать головы (21.10) */
+.st-card__img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .4s ease-out; }
+/* на фото «Откладывания» над головой много стены – кадр ниже, как в «Читайте также» */
+.st-card__img img[src="/khomyanina-stati/img/photo4.jpg"] { object-position: center 45%; }
 .st-card__body { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 26px; flex: 1; }
 .st-card__title { font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.25; margin: 0; }
 .st-card__sub { font-weight: 600; color: #2a6df4; margin: 0; line-height: 1.4; }
