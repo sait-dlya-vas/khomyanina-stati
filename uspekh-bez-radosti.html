@@ -206,13 +206,11 @@ html { scroll-behavior: smooth; } body { margin: 0; background: #fff; -webkit-fo
 /* фото: кадр всегда от верха – если что-то и срезается, то низ, голова целая */
 .ar .pv-hero__frame img { object-position: center top; }
 .ar .pv-hero__badge-ico svg { display: block; }
-/* содержание – одна строка, раскрывается по нажатию */
-.ar-toc { margin: 0 0 44px; border-top: 1px solid var(--pv-line); border-bottom: 1px solid var(--pv-line); font-size: 16px; }
-.ar-toc summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; font-weight: 600; color: var(--pv-ink); }
-.ar-toc summary::-webkit-details-marker { display: none; }
-.ar-toc summary::after { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--pv-accent); border-bottom: 2px solid var(--pv-accent); transform: rotate(45deg) translateY(-3px); transition: transform .2s; flex-shrink: 0; }
-.ar-toc[open] summary::after { transform: rotate(-135deg) translateY(-3px); }
-.ar-toc ol { margin: 0 0 16px; padding-left: 22px; display: grid; gap: 6px; line-height: 1.5; }
+/* содержание – всегда открыто (просьба Александры 21.10), но компактно: мелкий список между тонкими линиями */
+.ar-toc { margin: 0 0 44px; padding: 16px 0 18px; border-top: 1px solid var(--pv-line); border-bottom: 1px solid var(--pv-line); font-size: 16px; }
+.ar-toc__title { margin: 0 0 8px; font-weight: 600; color: var(--pv-ink); }
+.ar-toc ol { margin: 0; padding-left: 22px; display: grid; gap: 4px; line-height: 1.5; }
+.ar-toc li::marker { color: var(--pv-muted); }
 .ar-toc a { color: var(--pv-accent-deep); text-decoration: none; }
 .ar-toc a:hover { text-decoration: underline; }
 .ar .pv-art h2 { scroll-margin-top: 24px; }
@@ -290,10 +288,10 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px soli
 </nav>
 <main class="ar">
 <!-- Верх статьи – как у образца «Быть нужным»: текст слева, вертикальное фото справа, плашка на фото.
-     Из ТЗ: под H1 рубрика и дата, без плашек «Статья N». Широкая обложка 1200×630 – только для поисковиков и соцсетей. -->
+     Рубрика и дата – над H1, как в образце (просьба Александры 21.10); без плашек «Статья N». Широкая обложка 1200×630 – только для поисковиков и соцсетей. -->
 <section class="pv-hero" aria-labelledby="pv-hero-title"><div class="pv-hero__inner"> <div class="pv-hero__copy">
-  <h1 class="pv-hero__title" id="pv-hero-title">Успех без радости: <em>почему достижения</em> не приносят удовлетворения</h1>
   <div class="pv-hero__meta ar-meta"><span class="pv-hero__tag">Психология карьеры</span><time datetime="2026-10-12">12 октября 2026</time></div>
+  <h1 class="pv-hero__title" id="pv-hero-title">Успех без радости: <em>почему достижения</em> не приносят удовлетворения</h1>
   <p class="pv-hero__lead">Вы достигли цели, о которой мечтали, но вместо радости чувствуете пустоту и усталость? В этой статье мы разберем, почему так происходит с точки зрения нейрофизиологии и психологии, и что сделать, чтобы вернуть вкус к жизни и работе.</p>
   <div class="pv-hero__author"><div class="pv-hero__avatar" aria-hidden="true">Н</div> <div><div class="pv-hero__name">Надежда Хомянина</div><div class="pv-hero__role">Психолог в сфере профессиональной реализации</div></div></div>
   <div class="pv-hero__cta-row">
@@ -307,14 +305,14 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px soli
 </div> </div></section>
 <section class="pv-quote"><blockquote><p>«Я сейчас самый несчастный человек из живущих. Если бы то, что я чувствую, распределили поровну между всем человечеством, на земле не осталось бы ни одного улыбающегося лица».</p><cite>— Авраам Линкольн, 1841 год</cite></blockquote></section>
 <article class="pv-art" id="pv-article">
-<details class="ar-toc"><summary>Содержание статьи</summary><nav aria-label="Содержание"><ol>
+<nav class="ar-toc" aria-label="Содержание"><p class="ar-toc__title">Содержание</p><ol>
   <li><a href="#почему">Почему успех не приносит радости</a></li>
   <li><a href="#линкольн">Исторический пример: успешные и несчастные</a></li>
   <li><a href="#наука">Что говорит наука</a></li>
   <li><a href="#опыт">Пример из моей практики</a></li>
   <li><a href="#что-делать">Что делать, если успех не приносит радости</a></li>
   <li><a href="#faq">Часто задаваемые вопросы</a></li>
-</ol></nav></details>
+</ol></nav>
   <h2 id="почему">Почему успех не приносит радости</h2>
   <p>Мы живём в эпоху культа достигаторства. Соцсети, бизнес-литература и корпоративная культура твердят: ставь цели, достигай, побеждай. И мы достигаем. Повышение, проект, квартира, свой бизнес. Всё, как надо. Но внутри — тишина. Не радость, не гордость, а звенящая пустота и вопрос: «И это всё?»</p>
   <p>Это не личная несостоятельность. Это закономерность, у которой есть научное объяснение.</p>
