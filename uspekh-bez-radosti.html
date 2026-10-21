@@ -202,6 +202,12 @@ html { scroll-behavior: smooth; } body { margin: 0; background: #fff; -webkit-fo
    Ниже только то, чего в образце нет, но требует ТЗ, – оформлено тихо, чтобы не спорить с образцом. */
 .ar .pv-hero__inner { padding-top: 104px; } /* место под плашку меню */
 .ar .pv-hero__meta time { white-space: nowrap; }
+/* кнопки «Главная» и «Все статьи» над заголовком – в цветах плашки рубрики */
+.ar-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+.ar-nav__btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; background: var(--pv-accent-soft); color: var(--pv-accent-deep);
+  font-size: 15px; font-weight: 600; text-decoration: none; transition: background .2s, color .2s; }
+.ar-nav__btn:hover { background: var(--pv-accent); color: #fff; }
+.ar-nav + .ar-meta { margin-top: -8px; } /* рубрика и дата ближе к кнопкам, чем к заголовку */
 .ar .pv-hero__copy > .pv-hero__lead + .pv-hero__lead { margin-top: -8px; }
 /* фото: кадр всегда от верха – если что-то и срезается, то низ, голова целая */
 .ar .pv-hero__frame img { object-position: center top; }
@@ -288,8 +294,12 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px soli
 </nav>
 <main class="ar">
 <!-- Верх статьи – как у образца «Быть нужным»: текст слева, вертикальное фото справа, плашка на фото.
-     Рубрика и дата – над H1, как в образце (просьба Александры 21.10); без плашек «Статья N». Широкая обложка 1200×630 – только для поисковиков и соцсетей. -->
+     Над H1 – кнопки «Главная» и «Все статьи» (рубрика и дата – по флагу SHOW_META); без плашек «Статья N». Широкая обложка 1200×630 – только для поисковиков и соцсетей. -->
 <section class="pv-hero" aria-labelledby="pv-hero-title"><div class="pv-hero__inner"> <div class="pv-hero__copy">
+  <nav class="ar-nav" aria-label="Разделы сайта">
+    <a class="ar-nav__btn" href="/khomyanina-stati/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1v-8.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Главная</a>
+    <a class="ar-nav__btn" href="/khomyanina-stati/stati"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Все статьи</a>
+  </nav>
   <div class="pv-hero__meta ar-meta"><span class="pv-hero__tag">Психология карьеры</span><time datetime="2026-10-12">12 октября 2026</time></div>
   <h1 class="pv-hero__title" id="pv-hero-title">Успех без радости: <em>почему достижения</em> не приносят удовлетворения</h1>
   <p class="pv-hero__lead">Вы достигли цели, о которой мечтали, но вместо радости чувствуете пустоту и усталость? В этой статье мы разберем, почему так происходит с точки зрения нейрофизиологии и психологии, и что сделать, чтобы вернуть вкус к жизни и работе.</p>
